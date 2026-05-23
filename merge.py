@@ -34,7 +34,6 @@ def tail_and_merge(file1, file2, output_file, interval=0.3):
                             out.flush()
                             pos1 = f1.tell()
                             updated = True
-                            print(f"📌 [POST] {len(new_content1.strip())} karakter ditambahkan")
                 except:
                     pass
           
@@ -48,12 +47,9 @@ def tail_and_merge(file1, file2, output_file, interval=0.3):
                             out.flush()
                             pos2 = f2.tell()
                             updated = True
-                            print(f"📌 [GET] {len(new_content2.strip())} karakter ditambahkan")
                 except:
                     pass
           
-            if updated:
-                print(f"✅ Merge berhasil | {datetime.now().strftime('%H:%M:%S')}")
           
             time.sleep(interval)
 

@@ -3,10 +3,12 @@ import asyncio
 from playwright.async_api import async_playwright
 from urllib.parse import urlparse, parse_qsl, urlencode
 import json
+from pathlib import Path
 
-INPUT_FILE = "satu.txt"
-OUTPUT_FILE = "get_params.txt"
-CONCURRENCY = 30
+BASE_DIR = Path(__file__).parent.parent      
+
+INPUT_FILE = BASE_DIR / "satu.txt"
+OUTPUT_FILE = BASE_DIR / "get_params.txt"
 
 results = set()
 lock = asyncio.Lock()

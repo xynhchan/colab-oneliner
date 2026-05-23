@@ -30,8 +30,6 @@ def tail_and_merge(file1, file2, output_file, interval=0.3):
                         f1.seek(pos1)
                         new_content1 = f1.read()
                         if new_content1:
-                            timestamp = datetime.now().strftime("%H:%M:%S")
-                            out.write(f"\n--- [POST PARAMS] {timestamp} ---\n")
                             out.write(new_content1)
                             out.flush()
                             pos1 = f1.tell()
@@ -46,8 +44,6 @@ def tail_and_merge(file1, file2, output_file, interval=0.3):
                         f2.seek(pos2)
                         new_content2 = f2.read()
                         if new_content2:
-                            timestamp = datetime.now().strftime("%H:%M:%S")
-                            out.write(f"\n--- [GET PARAMS] {timestamp} ---\n")
                             out.write(new_content2)
                             out.flush()
                             pos2 = f2.tell()

@@ -2,10 +2,15 @@
 import asyncio
 from playwright.async_api import async_playwright
 from urllib.parse import urlparse, parse_qsl, urlencode
+from pathlib import Path
 import json
 
-INPUT_FILE = "satu.txt"
-OUTPUT_FILE = "post_params.txt"
+
+# Naik satu folder ke atas untuk mencari satu.txt
+BASE_DIR = Path(__file__).parent.parent 
+
+INPUT_FILE = BASE_DIR / "satu.txt"
+OUTPUT_FILE = BASE_DIR / "post_params.txt"
 CONCURRENCY = 30
 
 results = set()

@@ -232,4 +232,5 @@ async def main():
         await asyncio.gather(*[sem_worker(u) for u in urls])
         await browser.close()
 
-await main()
+if __name__ == "__main__":
+    asyncio.run(main())

@@ -9,6 +9,7 @@ BASE_DIR = Path(__file__).parent.parent
 
 INPUT_FILE = BASE_DIR / "satu.txt"
 OUTPUT_FILE = BASE_DIR / "get_params.txt"
+CONCURRENCY = 30
 
 results = set()
 lock = asyncio.Lock()
